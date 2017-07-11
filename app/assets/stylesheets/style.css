@@ -92,7 +92,7 @@ body {
 .search_box form input[type="submit"] {
 	border: none;
 	cursor: pointer;
-	background: url(/assets/search.png) no-repeat center;
+	background: url(search.png) no-repeat center;
 	display:inline-block;
 	width:24px;
 	height:24px;
@@ -112,7 +112,7 @@ body {
 	top: 8px;
 	width: 40px;
 	height:60px;
-	background: url(/assets/left-fold.png) no-repeat;
+	background: url(left-fold.png) no-repeat;
 	}
 .navigation span.right-ribbon{
 	position: absolute;
@@ -120,7 +120,7 @@ body {
 	top: 8px;
 	width: 40px;
 	height:60px;
-	background: url(/assets/right-fold.png) no-repeat;
+	background: url(right-fold.png) no-repeat;
 }
 .toggleMenu {
     display:  none;
@@ -129,7 +129,7 @@ body {
     width:95%;
      border-top:1px solid #DB3C15;
      border-bottom:1px solid #DB3C15;
-     background:url("/assets/nav-icon.png") no-repeat 98% center;
+     background:url("nav-icon.png") no-repeat 98% center;
 }
 .nav {
     list-style: none;
@@ -171,7 +171,7 @@ body {
 	background-image:none;
 }
 .nav > li {
-    background-image: url("/assets/line-divider.png");
+    background-image: url("line-divider.png");
     background-repeat: no-repeat;
     background-position:left;
 }
@@ -218,7 +218,7 @@ body {
         background-position: 95% 50%;
     }
     .nav li li .parent {
-        background-image: url("images/downArrow.png");
+        background-image: url("downArrow.png");
         background-repeat: no-repeat;
         background-position: 95% 50%;
     }
@@ -230,7 +230,7 @@ body {
         position: static;
     }
     .nav > li {
-    	 background-image: url("/assets/nav-arrow.png");
+    	 background-image: url("nav-arrow.png");
     	 background-position:96% 55%;
     }
     .nav > li > .parent{
@@ -328,7 +328,7 @@ body {
 	width:30px;
 	height:30px;
 	text-align:center;
-	background:#e44f2b url("/assets/arrows.png") no-repeat;
+	background:#e44f2b url("arrows.png") no-repeat;
 	border-radius:2em;
 	-webkit-border-radius:2em;
 	-moz-border-radius:2em;
@@ -430,7 +430,7 @@ body {
 	font-size:15px;
 	padding:10px 15px;
     color: #9C9C9C;
-    background:url(/assets/drop_arrow.png) no-repeat 0;
+    background:url(drop_arrow.png) no-repeat 0;
     border-bottom:1px solid #D6D6D6;
 }
 .categories li:last-child a{
@@ -479,7 +479,7 @@ body {
 	background:#D03D1A !important;
 }
 .add-banner2{
-	background:url("/assets/banner-bg.png");
+	background:url("banner-bg.png");
   margin-bottom: 20px;
 }
 .add-banner2 h4{
@@ -660,7 +660,7 @@ body {
 	height:50px;
 	border: none;
 	text-indent: 100%;
-	background: url(/assets/arrow_up.png) no-repeat right top;
+	background: url(arrow_up.png) no-repeat right top;
 }
 
 /*  Preview  ============================================================================= */
@@ -833,10 +833,10 @@ body {
 	text-decoration:none;
 }
 .wish-list li.wish{
-	background:url(/assets/wishlist.png) no-repeat 0;
+	background:url(wishlist.png) no-repeat 0;
 }
 .wish-list li.compare{
-	background:url(/assets/compare.png) no-repeat 0;
+	background:url(compare.png) no-repeat 0;
 	margin-right:0;
 }
 /* Checkbox Buttons */
@@ -998,7 +998,7 @@ body {
 	color: #333;
 }
 .input-box {
-	background: url(/assets/tag.png) no-repeat 0 8px;
+	background: url(tag.png) no-repeat 0 8px;
 	padding-left: 35px;
 }
 .input-box input[type="text"] {
@@ -1146,7 +1146,7 @@ body {
 .rating > ul > li {
 	display:inline-block;
 	margin-left:2px;
-	background:url("/assets/price-rating.png") no-repeat;
+	background:url("price-rating.png") no-repeat;
 	background-position:-20px 0px;
 	width:18px;
 	height:18px;
