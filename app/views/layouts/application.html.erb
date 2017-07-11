@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Svarka</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</head>
+<body>
+  
+  <div class="header">
+    <div class="wrap">
+      <div class="header_top">
+        <div class="logo">
+          <a href="/"><%= image_tag @logo.image.url %></a>
+        </div>
+        <div class="header_top_right">
+          <div class="search_box">
+            <span>Поиск</span>
+            <form>
+              <input type="text" value=""><input type="submit" value="">
+            </form>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>     
+      <div class="navigation">
+        <a class="toggleMenu" href="#">Меню</a>
+        <ul class="nav">
+          <li>
+            <a href="/">Главная</a>
+          </li>
+          <li  class="test">
+            <a href="#">Каталог</a>
+            <ul>
+              <% Group.all.each do |group|%>
+              <li>
+                <a href="#"><%=group.title%></a>
+                <ul>
+                  <% group.catalogs.each do |catalog|%>
+                  <li><%= link_to catalog.title, catalog%></li>
+                  <%end%>
+                </ul>
+              </li>
+              <%end%>
+<!--
+              <li>
+                <a href="#">Storage</a>
+                <ul>
+                  <li><a href="#">Bottles & Sippers</a></li>
+                  <li><a href="#">Containers & Jars</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Cutlery & Tableware</a>
+                <ul>
+                  <li><a href="#">Cutlery</a></li>
+                  <li><a href="#">Condiment Sets</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Bar Accessories</a>
+                <ul>
+                  <li><a href="#">Bottle Openers</a></li>
+                  <li><a href="#">Flasks</a></li>
+                </ul>
+              </li>
+-->
+            </ul>
+          </li>
+          <li>
+            <a href="/portfolios">Портфолио</a>
+            <ul>
+              <% Group.all.each do |group|%>
+              <li>
+                <a href="#"><%=group.title%></a>
+                <ul>
+                  <% group.catalogs.each do |catalog|%>
+                    <%if catalog.portfolio %>
+                    <li><%= link_to catalog.title, catalog.portfolio%></li>
+                    <%else%>
+                    <li><a href="#nophoto"><%= catalog.title %> (пока нет)</a></li>
+                    <%end%>
+                  <%end%>
+                </ul>
+              </li>
+              <%end%>
+            </ul>
+          </li>
+         
+          <li>
+            <a href="/delivery/index">Доставка</a>
+          </li>
+          <li>
+            <a href="#">Услуги</a>
+            <ul>
+              <% Article.where(url: 'service').each do |service|%>
+              <li><%= link_to service.title, "/page/#{service.id}"%></li>
+              <%end%>
+            </ul>
+          </li>
+<!-- 
+          <li>
+            <a href="#">Office Supplies</a>
+            <ul>
+              <li>
+                <a href="#">Books</a>
+                <ul>
+                  <li><a href="#">Academic & Professional</a></li>
+                  <li><a href="#">Entrance Exam</a></li>
+                  <li><a href="#">Literature & Fiction</a></li>
+                  <li><a href="#">Children & Teens</a></li>
+                  <li><a href="#">Indian Writing</a></li>
+                  <li><a href="#">New Releases</a></li>
+                  <li><a href="#">Bestsellers</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Stationery</a>
+                <ul>
+                  <li><a href="#">Pens</a></li>
+                  <li><a href="#">Calculators</a></li>
+                  <li><a href="#">College Supplies</a></li>
+                  <li><a href="#">Art Supplies</a></li>
+                  <li><a href="#">Diaries & Notebooks</a></li>
+                  <li><a href="#">Gifting</a></li>
+                </ul>
+              </li>
+              
+            </ul>
+          </li>
+          <li>
+            <a href="#">Sports Equipment</a>
+            <ul>
+              <li>
+                <a href="#">Fitness</a>
+                <ul>
+                  <li><a href="#">Yoga Mats</a></li>
+                  <li><a href="#">Gym Gloves</a></li>
+                  <li><a href="#">Ab Exercisers</a></li>
+                  <li><a href="#">Gym Balls</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Indoor Sports</a>
+                <ul>
+                  <li><a href="#">Chess</a></li>
+                  <li><a href="#">Darts</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Team Sports</a>
+                <ul>
+                  <li><a href="#">Basketball</a></li>
+                  <li><a href="#">Cricket</a></li>
+                  <li><a href="#">Football</a></li>
+                  <li><a href="#">VolleyBall</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Racquet Sports</a>
+                <ul>
+                  <li><a href="#">Badminton</a></li>
+                  <li><a href="#">Squash</a></li>
+                  <li><a href="#">Table Tennis</a></li>
+                  <li><a href="#">Tennis</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="contact.html">Contact Us</a>
+          </li>
+-->
+          <li>
+            <a href="#">Информация</a>
+            <ul>
+              <li><a href="/contact/index">Контакты</a></li>
+              <li><a href="/connect/index">Реквизиты</a></li>
+              <li><a href="/cooperation/index">Сотрудничество</a></li>
+            </ul>
+          </li>
+        </ul>
+        <span class="left-ribbon"> </span> 
+        <span class="right-ribbon"> </span>    
+      </div>
+      <%= yield :welcome %>
+    </div>
+  </div>
+  <!-- //-+-+-+-+-+-+-End Header +-+-+-+-+-+-+-+- -->
+
+  <%= yield %>
+
+  <div class="footer">
+    <div class="wrap">  
+      <div class="copy_right">
+        <p>Всё законно  (c) | Template by  <a href="http://w3layouts.com" target="_blank">W3Layouts</a> | Разработано
+          <i class="fa fa-heart"></i>
+          <a href="#">ОткликПавэр</a>
+        </p>
+      </div> 
+      <div class="footer-nav">
+        <ul>
+          <li><a href="/about/index">О комнании</a> : </li>
+          <li><a href="/connect/index">Сотрудничество</a> : </li>
+          <li><a href="/contact/index">Свяжитесь с Нами</a>  </li>
+        </ul>
+      </div>   
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function() {      
+      $().UItoTop({ easingType: 'easeOutQuart' });
+    });
+  </script>
+  <a href="#" id="toTop"> </a>
+  <%= javascript_include_tag 'navigation' %>
+
+</body>
+</html>

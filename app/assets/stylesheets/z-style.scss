@@ -1,0 +1,32 @@
+
+.right-image {
+  float: right;
+  margin: 0px 0px 10px 10px;
+}
+
+
+
+hr {
+  background-color: #DEDEDE !important; 
+  border-color: #DEDEDE !important;
+}
+
+.some_block {
+  border: 1px solid red;
+}
+
+
+
+/* -- Разделитель -- */
+.content-bottom-right h3 span {
+  color: #E44F2B;
+}
+.specification-ul i { /*rails_admin separator*/
+  display: none;
+}
+.clear { /*Fix hide &nbsp*/
+  text-indent: -1000em;
+  visibility: hidden;
+  font-size:0; 
+}
+/* // -- Разделитель -- */

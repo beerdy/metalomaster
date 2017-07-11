@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @group.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @group.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @group.slave %>
+</p>
+
+<p>
+  <strong>Image uid:</strong>
+  <%= @group.image_uid %>
+</p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @group.image_name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @group.url %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @group.sort %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>

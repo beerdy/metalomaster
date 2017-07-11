@@ -1,0 +1,29 @@
+<div class="content-bottom-left">
+  <div class="categories">  
+    <ul>
+      <h3>Все группы</h3>
+      <%Catalog.all.each do |catalog|%>
+      <li><%= link_to catalog.title, catalog %></li>
+      <%end%>
+    </ul>
+  </div>    
+  <div class="buters-guide">
+    <h3>Для покупателя</h3>
+    <p><span><%=@mini_info.description.html_safe%></span></p> 
+    <p><%=@mini_info.slave.html_safe%></p>
+  </div>  
+  <div class="add-banner">
+    <%= image_tag @service_1.image.url if @service_1.image_stored? %>
+    <div class="banner-desc">
+      <%=@service_1.description.html_safe%>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="add-banner add-banner2">
+    <%= image_tag @service_2.image.url if @service_2.image_stored? %>
+    <div class="banner-desc">
+      <%=@service_2.description.html_safe%>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div> 

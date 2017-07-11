@@ -1,0 +1,214 @@
+        <div class="main">
+          <div class="wrap">
+            <div class="preview-page">
+              <div class="section group">
+                <div class="cont-desc span_1_of_2">
+                  <ul class="back-links">
+                    <li><a href="/">КАТАЛОГ</a> ::</li>
+                    <li><%= @product.catalog.title%> ::</li>
+                    <li><%= @product.title%></li>
+                    <div class="clear"> </div>
+                  </ul>
+                  <div class="product-details"> 
+                    <div class="grid images_3_of_2">
+                      <ul id="etalage">
+                        <% @product.photos.each do |photo| %>
+                        <% if photo.image_stored? %>
+                        <li>
+                        <%= image_tag photo.image.url, alt: photo.title, class: "etalage_thumb_image" %>
+                        <%= image_tag photo.image.url, alt: photo.title, class: "etalage_source_image" %>
+                        </li>
+                        <%end%>
+                        <%end%>
+                      </ul>
+                    </div>
+                    <div class="desc span_3_of_2">
+                      <h2><%= @product.title %></h2>
+                      <%= @product.description.html_safe%>
+                      <div class="share-desc">
+                        <div class="share">
+                          <!--
+                            <p>Number of units :</p><input type="number" class="text_box" type="text" value="1" min="1" />        
+                          -->
+                        </div>
+                        <div class="button"><span><a href="/contact/index">Заказать товар</a></span></div>          
+                        <div class="clear"></div>
+                      </div>
+                      <div class="wish-list">
+                        <ul>
+                          <li class="wish"><a href="/delivery/index">Подробности доставки</a></li>
+                        </ul>
+                      </div>
+                      <div class="colors-share">
+                        <!-- Colors
+                        <div class="color-types">
+                          <h4>Available Colors</h4>
+                          <form class="checkbox-buttons">
+                            <ul>
+                              <li><input id="r1" name="r1" type="radio"><label for="r1" class="grey"> </label></li>
+                              <li><input id="r2" name="r1" type="radio"><label for="r2" class="blue"> </label></li>
+                              <li><input id="r3" name="r1" type="radio"><label class="white" for="r3"> </label></li>
+                              <li><input id="r4" name="r1" type="radio"><label class="black" for="r4"> </label></li>
+                            </ul>
+                          </form>
+                        </div>
+                        -->
+                        <div class="social-share">
+                          <h4>Публиковать в:</h4>
+                          <a href="http://vk.com/share.php?url=http://metalomaster.ru/products/<%=@product.id%>" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                          <a href="http://www.odnoklassniki.ru/dk?st.cmd=addShare&amp;st.s=1&amp;st._surl=http://metalomaster.ru/products/<%=@product.id%>" target="_blank"><i class="fa fa-odnoklassniki-square" aria-hidden="true"></i></a>
+                          <a href="http://www.facebook.com/sharer.php?u=http://metalomaster.ru/products/<%=@product.id%>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="clear"></div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="product_desc">  
+                    <div id="horizontalTab">
+                      <ul class="resp-tabs-list">
+                        <li>Спецификация</li>
+                        <li>Теги продукта</li>
+                        <li>Оставить отзыв</li>
+                        <div class="clear"></div>
+                      </ul>
+                      <div class="resp-tabs-container">
+                        <div class="product-specifications">
+                        <%= @product.specification.html_safe %>
+                        </div>
+
+                        <div class="product-tags">
+                          <p>По приведенному списку тегов можно найти товар в общем каталоге нашего интернет магазина</p>
+                          <h4>Теги для поиска:</h4>
+                          <div class="input-box">
+                          <input type="text" value="<%=@product.tag.description if @product.tag %>" disabled>
+                        </div>
+                        <div class="button"><span><a href="#">Поиск тегов</a></span></div>
+                      </div>  
+
+                      <div class="review">
+                        <h4> <u>Основные критерии</u></h4>
+                        <ul>
+                          <li>Цена : <div class="rating-stars"><div class="rating" data-rating-max="5"> </div> </div>
+                          </li>
+                          <li>Исполнение : <div class="rating-stars"><div class="rating" data-rating-max="5"> </div> </div></li>
+                          <li>Качество : <div class="rating-stars"><div class="rating" data-rating-max="5"> </div> </div></li>
+                        </ul>
+                        <p>В данном месте Вы можете оставить свой отзыв. Напишите объективную оценку приобретенному продукту. Оцените качество обслуживания оператора магазина. Расскажите о имеющихся проблемах. Перечислите оп возможности плюсы товара. Благодаря вашим отзывам мы стараемся делать наши продукты и оказываемые услуги на более высоком уровне</p>
+                        <div class="your-review">
+                          <h4>Как вы оцениваете продукт?</h4>
+                          <p>Напишите ваш отзыв?</p>
+                          <form>
+                            <div>
+                              <span><label>Как к вам обращаться<span class="red">*</span></label></span>
+                              <span><input type="text" value=""></span>
+                            </div>
+                            <div><span><label>Общая оценка<span class="red">*</span></label></span>
+                              <span><input type="text" value=""></span>
+                            </div>            
+                            <div>
+                              <span><label>Отзыв<span class="red">*</span></label></span>
+                              <span><textarea> </textarea></span>
+                            </div>
+                            <div>
+                              <span><input type="submit" value="ОТПРАВИТЬ ОТЗЫВ"></span>
+                            </div>
+                          </form>
+                        </div>      
+                        <script type="text/javascript">
+                          /* place inside document ready function */
+                          $(".rating").starRating({
+                            minus: true // step minus button
+                          });
+                        </script> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="rightsidebar span_3_of_1 sidebar">
+                <% if @products_popular.size >= 1%>
+                <h3>Популярные товары</h3>
+                <ul class="popular-products">
+                  <%@products_popular.each do |product|%>
+                  <li>
+                    <h4><a href="preview.html"><%product.title%></a></h4>
+                    <%= link_to product_path do %>
+                      <%=image_tag product.image.url, alt: product.title %>
+                    <%end%>
+                    <div class="price-details">
+                      <div class="price-number">
+                        <p><span class="rupees line-through"><%=product.price_old%> <i class="fa fa-rub" aria-hidden="true"></i></span> &nbsp; <span class="rupees"><%=product.price_new%> <i class="fa fa-rub" aria-hidden="true"></i></span></p>
+                      </div>
+                      <div class="add-cart">                
+                        <h4><a href="/products/<%=product.id%>">Подробнее</a></h4>
+                      </div>
+                      <div class="clear"></div>
+                    </div>           
+                  </li>
+                  <%end%>
+                </ul>
+                <%end%>
+
+                <div class="community-poll">
+                  <h3>Опрос магазина</h3>
+                  <p>Чтобы вы хотели видеть на сайте?</p>
+                  <div class="poll">
+                    <form>
+                      <ul>
+                        <li>
+                          <input type="radio" name="vote" class="radio" value="1">
+                          <span class="label"><label>Больше фото</label></span>
+                        </li>
+                        <li>
+                          <input type="radio" name="vote" class="radio" value="2">
+                          <span class="label"><label for="vote_2">Сниженные цены</label></span>
+                        </li>
+                        <li>
+                          <input type="radio" name="vote" class="radio" value="3">
+                          <span class="label"><label for="vote_3">Расширенный ассортимент</label></span>
+                        </li>
+                        <li>
+                          <input type="radio" name="vote" class="radio" value="5">
+                          <span class="label"><label for="vote_5">Способы оплаты</label></span>
+                        </li>
+                        <li>
+                          <input type="radio" name="vote" class="radio" value="6">
+                          <span class="label"><label for="vote_6">Информация о гарантии</label></span>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content_top">
+          <%= render 'shared/content_top' %>
+        </div>
+      </div>
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $('#horizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion           
+            width: 'auto', //auto or any width like 600px
+            fit: true   // 100% fit in a container
+          });
+        });
+        jQuery(document).ready(function($){
+
+          $('#etalage').etalage({
+            thumb_image_width: 300,
+            thumb_image_height: 400,
+            source_image_width: 900,
+            source_image_height: 1200,
+            show_hint: true,
+            click_callback: function(image_anchor, instance_id){
+              alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+            }
+          });
+
+        });
+      </script>

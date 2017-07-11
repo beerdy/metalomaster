@@ -1,0 +1,35 @@
+<div id="blueimp-gallery" class="blueimp-gallery">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+<div class="main">
+  <div class="content">
+    <div class="content_top">
+      <%= render 'shared/content_top' %>    
+    </div>
+    <div class="content_bottom">
+      <div class="wrap">
+        <%= render 'shared/content_bottom_left'%>
+        <!-- Content bottom right -->
+        <div class="content-bottom-right">
+          <h3>УСЛУГИ <span>::</span> <%= @article.title %> </h3>
+          <div class="row product-articles">
+              <div class='col-sm-12 col-md-12 col-lg-12 article'>
+                <%= @article.description.html_safe%>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+          </div>
+        </div><!-- // Content bottom right -->
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>

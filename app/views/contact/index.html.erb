@@ -1,0 +1,30 @@
+<div class="main">
+  <div class="wrap">
+    <div class="preview-page">
+      <div class="contact_info">
+        <div class="map">
+          <%=@map.description.html_safe%>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Свяжитесь с нами</h3>
+          <%= form_for(@message) do |f| %>
+            <div>
+              <input name="message[name]" type="text" class="textbox textbox1" value="Имя..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Имя...';}" >
+              <input name="message[contact]" type="text" class="textbox" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}">
+              <input name="message[subject]" type="text" class="textbox" value="Тема..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Тема...';}">
+              <div class="clear"></div>
+            </div>
+            <div>
+              <span><textarea name="message[message]" value="Сообщение:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Сообщение';}">Сообщение </textarea></span>
+            </div>
+            <div>
+              <input type="submit" value="Отправить"  class="mybutton">
+              <div class="clear"></div>
+            </div>
+          <%end%>
+        </div>
+      </div>    
+    </div> 
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div id="blueimp-gallery" class="blueimp-gallery">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+<div class="main">
+  <div class="content">
+    <div class="content_top">
+      <%= render 'shared/content_top' %>    
+    </div>
+    <div class="content_bottom">
+      <div class="wrap">
+
+        <%= render 'shared/content_bottom_left'%>
+        <!-- Content bottom right -->
+        <div class="content-bottom-right">
+          <h3>ПОРТФОЛИО <span>::</span> <%= @portfolio.catalog.group.title %> <span>::</span> <%= @portfolio.catalog.title %></h3>
+
+          <div id="links" class="container">
+            <div class="row">
+              <div class='list-group gallery'>
+                <%@portfolio.photos.each do |photo| %>
+                <%if photo.image_stored? %>
+                <div class='col-sm-4 col-md-3 col-lg-3'>
+                <a href="<%=photo.image.url%>" title="<%=photo.title%>" class="thumbnail fancybox" rel="ligthbox">
+                  <%= image_tag photo.image.url, alt: photo.title, class: 'img-responsive', size: '250' %>
+                </a>
+                </div>
+                <%end%>
+                <%end%>
+              </div>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+          <script type="text/javascript">
+          document.getElementById('links').onclick = function (event) {
+            event = event || window.event;
+            var target = event.target || event.srcElement,
+              link = target.src ? target.parentNode : target,
+              options = {index: link, event: event},
+              links = this.getElementsByTagName('a');
+            blueimp.Gallery(links, options);
+          };
+          </script>
+        </div><!-- // Content bottom right -->
+
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>

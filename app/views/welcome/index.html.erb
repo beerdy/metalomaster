@@ -1,0 +1,99 @@
+<% content_for :welcome do %>
+<div class="header_bottom">
+  <div class="slider-text">
+    <%= @super_info.description.html_safe %>
+  </div>
+  <div class="slider-img">
+    <%= image_tag @super_info.image.url, alt: @super_info.title %>
+  </div>
+  <div class="clear"></div>
+</div>
+<%end%>
+
+<div class="main">
+  <div class="content">
+    <div class="content_top">
+      <%= render 'shared/content_top' %>
+    </div>
+    <div class="content_bottom">
+      <div class="wrap">
+
+        <%= render 'shared/content_bottom_left'%>
+        <!-- Content bottom left -->
+        <div class="content-bottom-right">
+          <h3>Вся продукция</h3>
+          <!-- Section -->
+          <div class="section group">
+            <% count=0;Product.all.each do |product|%>
+            <%= count>=4? (count=0;'</div><div class="section group">'.html_safe) : (count+=1;'') %>
+            <div class="grid_1_of_4 images_1_of_4">
+              <div class="caption-title">
+                <h4><%= link_to product.title, product%></h4>
+              </div>
+              <a href="/products/<%=product.id%>">
+                <div class="caption-image">
+                  <%= image_tag product.image.url, alt: product.title if product.image_stored? %>
+                </div>
+              </a>
+              <div class="price-details">
+                <div class="price-number">
+                  <p><span class="rupees"><%=product.price_new%> <i class="fa fa-rub" aria-hidden="true"></i> </span></p>
+                </div>
+                <div class="add-cart">                
+                  <h4><%= link_to 'Подробнее', product%></h4>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+            <%end%>
+          </div><!-- // Section -->
+          <script type="text/javascript">
+            $( document ).ready(function() {
+              function func() {
+
+                var heights = $(".caption-title h4").map(function() {
+                    return $(this).height();
+                }).get(),
+                maxHeight = Math.max.apply(null, heights);
+                $(".caption-title").height(maxHeight);
+
+                var heights = $(".caption-image img").map(function() {
+                    return $(this).height();
+                }).get(),
+                maxHeight = Math.max.apply(null, heights);
+                $(".caption-image").height(maxHeight);
+                
+
+              }
+
+              setTimeout(func, 1000);
+              window.addEventListener("resize", func);
+            });
+          </script>
+
+          <div class="product-articles">
+            <p></p>
+            <h3><%=@article.title%></h3>
+            <ul>
+              <li>
+                <div class="article">
+                  <%=@article.description.html_safe%>
+                </div>
+              </li>
+            <!-- Пример по li  
+              <li>
+                <div class="article">
+                  <p><span>Очередной абзац</span></p>
+                  <p>Тут например какой нибудь текст. Тут еще немного текста... Тут например какой нибудь текст. Тут еще немного текста... Тут например какой нибудь текст. Тут еще немного текста... Тут например какой нибудь текст. Тут еще немного текста... Тут например какой нибудь текст. Тут еще немного текста... Тут например какой нибудь текст. Тут еще немного текста... Тут например какой нибудь текст. Тут еще немного текста... Тут например какой нибудь текст. Тут еще немного текста... Тут например какой нибудь текст. Тут еще немного текста... Тут например какой нибудь текст. Тут еще немного текста... Тут например какой нибудь текст. Тут еще немного текста... </p>
+                </div>
+              </li>
+            -->
+            </ul>
+          </div>
+        </div><!-- // Content bottom left -->
+
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
