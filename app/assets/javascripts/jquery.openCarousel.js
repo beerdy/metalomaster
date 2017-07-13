@@ -342,7 +342,7 @@ Include jquery.openCarousel.js and jquery.openCarousel.css in your projects
 
   })();
 
-  $(document).ready(function() {
+  $(document).on('turbolinks:load', function() {
     return $(".ocarousel").each(function() {
       return new Ocarousel(this);
     });

@@ -48,7 +48,7 @@
             <%end%>
           </div><!-- // Section -->
           <script type="text/javascript">
-            $( document ).ready(function() {
+            $( document ).on('turbolinks:load', function() {
               function func() {
 
                 var heights = $(".caption-title h4").map(function() {

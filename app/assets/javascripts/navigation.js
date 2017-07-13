@@ -1,7 +1,7 @@
 
 var ww = document.body.clientWidth;
 
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
 	$(".nav li a").each(function() {
 		if ($(this).next().length > 0) {
 			$(this).addClass("parent");
