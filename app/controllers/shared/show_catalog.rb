@@ -14,19 +14,23 @@ module ShowCatalog
     first_product = products.first
 
     if first_product.nil? or params[:last].nil? ? false : (!/\A\d+\z/.match(params[:last]))
+      index
       render action: "index"
       return
     end
 
     # -- Head page -- #
     head = first_product.catalog
+
+    # -- For pages -- #
+    @page.title = head.group.title
+    @page.head = head.title
+    @page.description = head.description
+
     #Title & text - catalog
     @group_title = head.group.title
     @catalog_title = head.title
-    @description = head.description.html_safe
     # // -- Head page -- #
-
-
 
     # -- Start pagination -- #
     @products = Array.new

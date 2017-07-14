@@ -53,6 +53,7 @@ body {
 	padding-bottom:25px;
 }
 .logo {
+  margin-top: -15px;
 	float: left;
 }
 .header_top_right{

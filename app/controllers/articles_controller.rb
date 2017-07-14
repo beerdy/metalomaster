@@ -1,3 +1,6 @@
+module MyPage
+  attr_accessor :name
+end
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show]
 
@@ -17,10 +20,12 @@ class ArticlesController < ApplicationController
     def set_article
       case params[:id]
       when /^[a-z]+$/
-        @article = Article.where(url: params[:id]).first
+        @page = Article.where(url: params[:id]).first
       else
-        @article = Article.find(params[:id])
+        @page = Article.find(params[:id])
       end
+      @page.extend MyPage
+      @page.name = @page.slave
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

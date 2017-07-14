@@ -14,10 +14,28 @@
       <div class="header_top">
         <div class="logo">
           <a href="/"><%= image_tag @logo.image.url %></a>
+          <div class="phone_hidden">
+            <div class="row">
+              <div class="col-sm-6">
+                <i class="fa fa-phone" aria-hidden="true"></i> <%=@phone.html_safe if @phone %> 
+              </div>
+              <div class="col-sm-6">
+                <%= "<strong>|</strong> <span> <i class='fa fa-envelope' aria-hidden='true'></i> #{@email}</span>".html_safe if @email %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="social">
+          <ul>
+          <% @social.each_line do |line| %>
+          <% fa, url = line.split ';' %>
+            <li><a href="<%=url%>" target="_blank"><i class="fa fa-<%=fa%>" aria-hidden="true"></i></a></li>
+          <%end%>
+          </ul>
         </div>
         <div class="header_top_right">
           <div class="search_box">
-            <span>Поиск</span>
+            <span >Поиск</span>
             <form>
               <input type="text" value=""><input type="submit" value="">
             </form>
@@ -103,35 +121,6 @@
           </li>
 <!-- 
           <li>
-            <a href="#">Office Supplies</a>
-            <ul>
-              <li>
-                <a href="#">Books</a>
-                <ul>
-                  <li><a href="#">Academic & Professional</a></li>
-                  <li><a href="#">Entrance Exam</a></li>
-                  <li><a href="#">Literature & Fiction</a></li>
-                  <li><a href="#">Children & Teens</a></li>
-                  <li><a href="#">Indian Writing</a></li>
-                  <li><a href="#">New Releases</a></li>
-                  <li><a href="#">Bestsellers</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">Stationery</a>
-                <ul>
-                  <li><a href="#">Pens</a></li>
-                  <li><a href="#">Calculators</a></li>
-                  <li><a href="#">College Supplies</a></li>
-                  <li><a href="#">Art Supplies</a></li>
-                  <li><a href="#">Diaries & Notebooks</a></li>
-                  <li><a href="#">Gifting</a></li>
-                </ul>
-              </li>
-              
-            </ul>
-          </li>
-          <li>
             <a href="#">Sports Equipment</a>
             <ul>
               <li>
@@ -184,7 +173,8 @@
           </li>
         </ul>
         <span class="left-ribbon"> </span> 
-        <span class="right-ribbon"> </span>    
+        <span class="right-ribbon"> </span>
+        <div class="phone"><i class="fa fa-phone" aria-hidden="true"></i> <%=@phone.html_safe if @phone %> <%= "<strong>|</strong> <span> <i class='fa fa-envelope' aria-hidden='true'></i> #{@email}</span>".html_safe if @email %></div>   
       </div>
       <%= yield :welcome %>
     </div>

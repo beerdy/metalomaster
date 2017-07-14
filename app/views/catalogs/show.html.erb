@@ -32,7 +32,21 @@
           </div><!-- // Section -->
         </div><!-- // Content bottom right -->
 
+        <% if @page.description %>
+        <div class="content-bottom-right padtop30">
+          <h3><%= @page.name %> <span>::</span> <%= @page.title %><%= " <span>::</span> #{@page.head}".html_safe if @page.respond_to? :head %></h3>
+          <div class="row product-articles">
+              <div class='col-sm-12 col-md-12 col-lg-12 article'>
+                <%= @page.description.html_safe %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+          </div>
+        </div><!-- // Content bottom right -->
         <div class="clear"></div>
+        <%end%>
+
       </div>
     </div>
   </div>

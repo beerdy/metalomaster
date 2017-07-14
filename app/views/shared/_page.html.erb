@@ -18,10 +18,10 @@
         <%= render 'shared/content_bottom_left'%>
         <!-- Content bottom right -->
         <div class="content-bottom-right">
-          <h3>УСЛУГИ <span>::</span> <%= @article.title %> </h3>
+          <h3><%= @page.name %> <span>::</span> <%= @page.title %><%= " <span>::</span> #{@page.head}".html_safe if @page.respond_to? :head %></h3>
           <div class="row product-articles">
               <div class='col-sm-12 col-md-12 col-lg-12 article'>
-                <%= @article.description.html_safe%>
+                <%= @page.description.html_safe if @page.description %>
               </div>
             </div>
           </div>

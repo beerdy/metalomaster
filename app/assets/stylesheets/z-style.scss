@@ -1,10 +1,7 @@
-
 .right-image {
   float: right;
   margin: 0px 0px 10px 10px;
 }
-
-
 
 hr {
   background-color: #DEDEDE !important; 
@@ -14,6 +11,11 @@ hr {
 .some_block {
   border: 1px solid red;
 }
+
+.padtop30 {
+  padding-top: 30px;
+}
+
 
 
 
@@ -30,3 +32,79 @@ hr {
   font-size:0; 
 }
 /* // -- Разделитель -- */
+
+
+
+
+/*-- Область телефона --*/
+.phone {
+  position: absolute;
+  top: 25%;
+  right: 10px;
+  font-size: 1.2em;
+  span {
+    color: #FFB29F;
+  }
+}
+
+.phone_hidden {
+  margin-left: -24px;
+  .row {
+    width: 100%;
+    min-width: 158px;
+    float: right;
+    //border: 1px solid green;
+    white-space: nowrap;
+    span {
+      color: #c9c9c9;
+    }
+  }
+}
+.phone, .phone_hidden {
+  color: white;
+  strong {
+    color: #DB3C15;
+  }
+}/* // -- Область телефона --*/
+
+/* -- Social -- */
+.social {
+  margin: 5px 80px 0 15px;
+  float: right;
+  color: white;
+  font-size: 2.2em;
+  ul li {
+    display: inline; 
+  }
+  i {
+    color: #c9c9c9;
+  }
+  li:hover i {
+    color: #848484; 
+  }
+}/* //-- Social -- */
+
+
+
+
+/**** Responsive Layout ****/
+@media only screen and (max-width: 400px) {
+  .search_box span {
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .search_box span {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .phone_hidden strong {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .phone{
+    display: none;
+  }
+}

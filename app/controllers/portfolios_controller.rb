@@ -10,6 +10,12 @@ class PortfoliosController < ApplicationController
   # GET /portfolios/1
   # GET /portfolios/1.json
   def show
+    catalog = @portfolio.catalog
+    if catalog
+      @page.title = catalog.group.title
+      @page.head = catalog.title
+      @page.description = catalog.description
+    end
   end
 
   # GET /portfolios/new

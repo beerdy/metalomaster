@@ -115,12 +115,6 @@
                             </div>
                           </form>
                         </div>      
-                        <script type="text/javascript">
-                          /* place inside document ready function */
-                          $(".rating").starRating({
-                            minus: true // step minus button
-                          });
-                        </script> 
                       </div>
                     </div>
                   </div>
@@ -189,6 +183,7 @@
           <%= render 'shared/content_top' %>
         </div>
       </div>
+      
       <script type="text/javascript">
         $(document).on('turbolinks:load', function () {
           $('#horizontalTab').easyResponsiveTabs({
@@ -206,6 +201,11 @@
             click_callback: function(image_anchor, instance_id){
               alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
             }
+          });
+
+          /* place inside document ready function */
+          $(".rating").starRating({
+            minus: true // step minus button
           });
 
         });

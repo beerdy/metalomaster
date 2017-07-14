@@ -22,18 +22,17 @@
           <h3>ПОРТФОЛИО <span>::</span> <%= @portfolio.catalog.group.title %> <span>::</span> <%= @portfolio.catalog.title %></h3>
 
           <div id="links" class="container">
-            <div class="row">
-              <div class='list-group gallery'>
-                <%@portfolio.photos.each do |photo| %>
+            <div class="row list-group gallery" style="width:80%">
+                <%count=0;@portfolio.photos.each do |photo| %>
                 <%if photo.image_stored? %>
-                <div class='col-sm-4 col-md-3 col-lg-3'>
+                <%= count>=3? (count=1;'</div><div class="row list-group gallery">'.html_safe) : (count+=1;'') %>
+                <div class='col-sm-4 col-md-4 col-lg-4'>
                 <a href="<%=photo.image.url%>" title="<%=photo.title%>" class="thumbnail fancybox" rel="ligthbox">
                   <%= image_tag photo.image.url, alt: photo.title, class: 'img-responsive', size: '250' %>
                 </a>
                 </div>
                 <%end%>
                 <%end%>
-              </div>
             </div>
             <div class="col-md-3"></div>
           </div>
@@ -49,6 +48,19 @@
           </script>
         </div><!-- // Content bottom right -->
 
+        <% if @page.description %>
+        <div class="content-bottom-right padtop30">
+          <h3><%= @page.name %> <span>::</span> <%= @page.title %><%= " <span>::</span> #{@page.head}".html_safe if @page.respond_to? :head %></h3>
+          <div class="row product-articles">
+              <div class='col-sm-12 col-md-12 col-lg-12 article'>
+                <%= @page.description.html_safe %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+          </div>
+        </div><!-- // Content bottom right -->
+        <%end%>
         <div class="clear"></div>
       </div>
     </div>
