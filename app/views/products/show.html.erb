@@ -183,7 +183,7 @@
           <%= render 'shared/content_top' %>
         </div>
       </div>
-      
+      <%= javascript_include_tag 'star-rating.js', 'data-turbolinks-track' => true %>
       <script type="text/javascript">
         $(document).on('turbolinks:load', function () {
           $('#horizontalTab').easyResponsiveTabs({
