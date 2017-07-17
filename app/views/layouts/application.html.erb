@@ -16,11 +16,11 @@
           <a href="/"><%= image_tag @logo.image.url %></a>
           <div class="phone_hidden">
             <div class="row">
-              <div class="col-sm-6">
-                <i class="fa fa-phone" aria-hidden="true"></i> <%=@phone.html_safe if @phone %> 
+              <div class="col-sm-4">
+                <i class="fa fa-phone" aria-hidden="true"></i> <%=@phone.html_safe if @phone %>
               </div>
-              <div class="col-sm-6">
-                <%= "<strong>|</strong> <span> <i class='fa fa-envelope' aria-hidden='true'></i> #{@email}</span>".html_safe if @email %>
+              <div class="col-sm-4">
+                <%= "&nbsp&nbsp<strong>|</strong> <span> <i class='fa fa-envelope' aria-hidden='true'></i> #{@email}</span>".html_safe if @email %>
               </div>
             </div>
           </div>
@@ -207,6 +207,6 @@
   </script>
   <a href="#" id="toTop"> </a>
   <%= javascript_include_tag 'navigation' %>
-
+  <%=@map.slave.html_safe%>
 </body>
 </html>
