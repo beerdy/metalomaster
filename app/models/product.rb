@@ -42,10 +42,10 @@ class Product < ActiveRecord::Base
             <li><span class="specification-heading">Материал</span> <i>|</i> <span> Метал </span>
             <div class="clear"></div>
             </li>
-            <li><span class="specification-heading">Габариты </span> <i>|</i> <span>800/1000/1200</span>
+            <li><span class="specification-heading">Габариты </span> <i>|</i> <span>-/-/-</span>
             <div class="clear"></div>
             </li>
-            <li><span class="specification-heading">Вес (kg)</span> <i>|</i> <span>75</span>
+            <li><span class="specification-heading">Вес (kg)</span> <i>|</i> <span>0</span>
             <div class="clear"></div>
             </li>
           </ul>'
