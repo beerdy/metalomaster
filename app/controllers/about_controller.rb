@@ -1,5 +1,7 @@
 class AboutController < ApplicationController
   def index
-    @article = Article.where(url: 'about').first
+    @page = Article.where(url: 'about').first
+    @page.extend MyPage
+    @page.name = @page.slave
   end
 end

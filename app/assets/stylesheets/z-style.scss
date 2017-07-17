@@ -84,8 +84,24 @@ hr {
   }
 }/* //-- Social -- */
 
-
-
+/*-- Contact page --*/
+.contact {
+  td:first-child {
+    text-align: center;
+  }
+  td {
+    font-weight: bold;
+  }
+  td:last-child {
+    font-weight: normal;
+  }
+  .fa {
+    
+    font-size: 2.2em;
+    color: #793D0E;
+    padding: 0px 15px 5px 0;
+  }
+}
 
 /**** Responsive Layout ****/
 @media only screen and (max-width: 400px) {

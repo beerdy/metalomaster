@@ -1,5 +1,7 @@
 class CooperationController < ApplicationController
   def index
-    @article = Article.where(url: 'cooperation').first
+    @page = Article.where(url: 'cooperation').first
+    @page.extend MyPage
+    @page.name = @page.slave
   end
 end

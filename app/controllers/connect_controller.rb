@@ -1,5 +1,7 @@
 class ConnectController < ApplicationController
   def index
-    @article = Article.where(url: 'connect').first
+    @page = Article.where(url: 'connect').first
+    @page.extend MyPage
+    @page.name = @page.slave
   end
 end

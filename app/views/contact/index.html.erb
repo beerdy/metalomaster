@@ -2,9 +2,26 @@
   <div class="wrap">
     <div class="preview-page">
       <div class="contact_info">
+        <h3>Месторасположения & Контакты</h3>
         <div class="map">
           <%=@map.description.html_safe%>
         </div>
+      </div>
+      <div class="padtop30">
+        <table class="contact">
+          <tr>
+            <td><i class="fa fa-location-arrow" aria-hidden="true"></i></td><td>Адрес:</td><td>&nbsp&nbsp&nbsp</td>
+            <td><%=@address.html_safe%></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-mobile" aria-hidden="true"></i></td><td>Телефоны:</td><td>&nbsp&nbsp&nbsp</td>
+            <td><%=@phones.html_safe%></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-envelope-open" aria-hidden="true"></i></td><td>EMAIL:</td><td>&nbsp&nbsp&nbsp</td>
+            <td><%=@email.html_safe%></td>
+          </tr>
+        </table>
       </div>
       <div class="contact-form">
         <h3>Свяжитесь с нами</h3>
