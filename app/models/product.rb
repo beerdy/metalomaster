@@ -7,7 +7,9 @@ class Product < ActiveRecord::Base
 
   rails_admin do
     include_all_fields
-
+  
+    exclude_fields  :sort, :updated_at, :created_at, :slave, :review, :url
+  
     edit do
       field :description, :rich_editor do
         config({
@@ -49,10 +51,6 @@ class Product < ActiveRecord::Base
             <div class="clear"></div>
             </li>
           </ul>'
-        end
-      end
-      configure :review do
-        default_value do
         end
       end
     end
