@@ -180,7 +180,7 @@
       <%= javascript_include_tag 'star-rating.js', 'data-turbolinks-track' => true %>
       <script type="text/javascript">
         $(document).on('turbolinks:load', function () {
-          if(window.loaded_images==false){
+          if(window.loaded_images!==true){
           $('#horizontalTab').easyResponsiveTabs({
             type: 'default', //Types: default, vertical, accordion           
             width: 'auto', //auto or any width like 600px
