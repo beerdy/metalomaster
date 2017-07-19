@@ -8,6 +8,7 @@ ru:
           has_one: 'Невозможно удалить запись, так как существует зависимость: %{record}'
           has_many: 'Невозможно удалить запись, так как существуют зависимости: %{record}'
     models:
+      article: 'Страницы'
       content: 'Контент для сайта'
       slider: 'Слайдер'
       work: 'Медиатека'
@@ -15,6 +16,7 @@ ru:
       photo: 'Изображения'
       service: 'Услуги'
       contact: 'Сообщения'
+      message: 'Сообщения'
       catalog: 'Подгруппа'
       partner: 'Партнеры'
       rent: 'Аренда'
@@ -27,6 +29,7 @@ ru:
       fact: 'Факты'
       document: 'Материалы'
       tag: 'Теги поиска'
+      portfolio: 'Портфолио'
     attributes:
       shared: &shared
         title: 'Наименование'
@@ -46,9 +49,15 @@ ru:
       tag:
         <<: *shared
         products: 'Продукция'
+      portfolio:
+        <<: *shared
+        catalog: 'Подгруппа'
+        photos: 'Фото'
       content:
         <<: *shared
         articles: 'Прикрепить'
+      article:
+        <<: *shared
       slider:
         <<: *shared
       work:
@@ -58,16 +67,22 @@ ru:
         galleries: 'Фото/Видео'
       photo:
         <<: *shared
+        product: 'Продукт'
       gallery:
         <<: *shared
         work: 'Медиатека'
-      contact:
+      contact: &contact
         name: 'Обратился'
         email: 'E-mail'
         message: 'Написал'
         created_at: 'Дата обращения'
         phone: 'Телефон'
         description: 'Обращения'
+      message:
+        <<: *shared
+        <<: *contact
+        contact: 'Контакт'
+        subject: 'Тема обращения'
       catalog:
         <<: *shared
         sort: 'Сортировка'

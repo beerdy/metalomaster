@@ -4,6 +4,8 @@ class Article < ActiveRecord::Base
   rails_admin do
     include_all_fields
 
+    exclude_fields  :sort, :updated_at, :created_at
+
     edit do
       field :description, :rich_editor do
         config({
