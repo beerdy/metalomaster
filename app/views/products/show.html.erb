@@ -87,17 +87,11 @@
                       </div>  
 
                       <div class="review">
-                        <h4> <u>Основные критерии</u></h4>
-                        <ul>
-                          <li>Цена : <div class="rating-stars"><div class="rating" data-rating-max="5"> </div> </div>
-                          </li>
-                          <li>Исполнение : <div class="rating-stars"><div class="rating" data-rating-max="5"> </div> </div></li>
-                          <li>Качество : <div class="rating-stars"><div class="rating" data-rating-max="5"> </div> </div></li>
-                        </ul>
+                        <div class="your-review"><h4>Оцените продукт</h4></div>
                         <p>В данном месте Вы можете оставить свой отзыв. Напишите объективную оценку приобретенному продукту. Оцените качество обслуживания оператора магазина. Расскажите о имеющихся проблемах. Перечислите оп возможности плюсы товара. Благодаря вашим отзывам мы стараемся делать наши продукты и оказываемые услуги на более высоком уровне</p>
                         <div class="your-review">
-                          <h4>Как вы оцениваете продукт?</h4>
-                          <p>Напишите ваш отзыв?</p>
+                          <h4>Как вы оцениваете продукт</h4>
+                          <p>Напишите ваш отзыв</p>
                           <form>
                             <div>
                               <span><label>Как к вам обращаться<span class="red">*</span></label></span>
@@ -186,6 +180,7 @@
       <%= javascript_include_tag 'star-rating.js', 'data-turbolinks-track' => true %>
       <script type="text/javascript">
         $(document).on('turbolinks:load', function () {
+          if(window.loaded_images==false){
           $('#horizontalTab').easyResponsiveTabs({
             type: 'default', //Types: default, vertical, accordion           
             width: 'auto', //auto or any width like 600px
@@ -207,6 +202,7 @@
           $(".rating").starRating({
             minus: true // step minus button
           });
-
+          }
+          window.loaded_images = true;
         });
       </script>
