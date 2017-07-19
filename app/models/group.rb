@@ -5,6 +5,6 @@ class Group < ActiveRecord::Base
 
   rails_admin do
     include_all_fields
-    exclude_fields  :sort, :updated_at, :created_at, :description, :slave
+    exclude_fields  :sort, :updated_at, :created_at, :description, :slave, :image, :url
   end
 end

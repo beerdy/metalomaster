@@ -34,6 +34,7 @@ class ApplicationController < ActionController::Base
       @logo = c if c.url == 'logo'
       @services << c if c.url == 'service'
       variables = c if c.url == 'variables'
+      @head = c if c.url == 'head'
     end
     eval variables.description
     @social = variables.slave

@@ -180,13 +180,12 @@
       <%= javascript_include_tag 'star-rating.js', 'data-turbolinks-track' => true %>
       <script type="text/javascript">
         $(document).on('turbolinks:load', function () {
-          if(window.loaded_images!==true){
           $('#horizontalTab').easyResponsiveTabs({
             type: 'default', //Types: default, vertical, accordion           
             width: 'auto', //auto or any width like 600px
             fit: true   // 100% fit in a container
           });
-
+          
           $('#etalage').etalage({
             thumb_image_width: 300,
             thumb_image_height: 400,
@@ -202,7 +201,6 @@
           $(".rating").starRating({
             minus: true // step minus button
           });
-          }
-          window.loaded_images = true;
+
         });
       </script>
